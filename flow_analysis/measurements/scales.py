@@ -131,7 +131,11 @@ def compute_wt_samples(flow_ensemble, operator="sym"):
     times = flow_ensemble.times
 
     t2E = times**2 * bs_Es
-    t_dt2E_dt = times[1:-1] * (t2E[:, 2:] - t2E[:, :-2]) / (2 * flow_ensemble.h)
+    t_dt2E_dt = (
+        times[2:-2]
+        * (-t2E[:, 4:] + 8 * t2E[:, 3:-1] - 8 * t2E[:, 1:-3] + t2E[:, :-4])
+        / (12 * flow_ensemble.h)
+    )
 
     return t_dt2E_dt
 
