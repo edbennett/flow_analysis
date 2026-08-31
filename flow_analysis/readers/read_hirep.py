@@ -3,7 +3,7 @@
 from functools import lru_cache
 from re import match
 
-from ..flow import FlowStep, Flow, FlowEnsemble
+from ..flow import Flow, FlowEnsemble, FlowStep
 
 
 def add_metadata(metadata, line_contents):
@@ -51,7 +51,7 @@ def read_flows_hirep(
     flows.metadata["flow_type"] = "Wilson"
 
     with open(filename) as f:
-        for line in f.readlines():
+        for line in f:
             line_contents = line.split()
             if not line_contents:
                 continue
