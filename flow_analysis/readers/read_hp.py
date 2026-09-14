@@ -2,7 +2,7 @@
 
 from functools import lru_cache
 
-from ..flow import FlowStep, Flow, FlowEnsemble
+from ..flow import Flow, FlowEnsemble, FlowStep
 
 
 @lru_cache(maxsize=8)
@@ -13,7 +13,7 @@ def read_flows_hp(filename):
     previous_line_flow_time = None
 
     with open(filename) as f:
-        for line in f.readlines():
+        for line in f:
             line_contents = line.split()
             trajectory = int(line_contents[0])
             flow_time, Ep, Ec = map(float, line_contents[1:])
