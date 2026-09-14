@@ -4,11 +4,10 @@ from collections import Counter
 
 import numpy as np
 from scipy.optimize import curve_fit
-
 from uncertainties import ufloat
 
-from ..flow import FlowEnsemble
 from ..fit_forms import gaussian
+from ..flow import FlowEnsemble
 from ..stats.autocorrelation import exp_autocorrelation_fit
 from ..stats.bootstrap import basic_bootstrap, bootstrap_susceptibility
 
@@ -129,6 +128,7 @@ def Q_fit(flow_ensemble, t="L/2", with_amplitude=False):
 
 def main():
     from argparse import ArgumentParser
+
     from ..readers import readers
 
     parser = ArgumentParser()
