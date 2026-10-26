@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
-from numpy import mean, std, asarray, empty
+from numpy import asarray, empty, mean, std
 from numpy.random import default_rng
-
 from uncertainties import ufloat
 
 BOOTSTRAP_SAMPLE_COUNT = 200

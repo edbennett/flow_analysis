@@ -197,6 +197,7 @@ def measure_w0(flow_ensemble, W0, operator="sym"):
 
 def main():
     from argparse import ArgumentParser
+
     from ..readers import readers
 
     parser = ArgumentParser()
