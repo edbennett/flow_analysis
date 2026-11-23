@@ -5,7 +5,7 @@ from re import match
 
 from numpy import nan
 
-from ..flow import FlowStep, Flow, FlowEnsemble
+from ..flow import Flow, FlowEnsemble, FlowStep
 
 
 def add_metadata(metadata, line_contents):
@@ -56,7 +56,7 @@ def read_flows_grid(filename, check_consistency=True):
     Q_idx = None
 
     with open(filename) as f:
-        for line in f.readlines():
+        for line in f:
             line_contents = line.split()
 
             if len(line_contents) < 8:

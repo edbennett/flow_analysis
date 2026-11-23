@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 
 import hashlib
-from os.path import basename
-
 from collections import Counter, namedtuple
+from os.path import basename
 
 from numpy import asarray
 from numpy.random import default_rng
